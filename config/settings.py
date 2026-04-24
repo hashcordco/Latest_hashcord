@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&p1253*-3qow1s+yg4geae9z9*qg0ko8-nr(1o&6&0vyzqps$d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.10.7', '127.0.0.1', 'localhost', '192.168.1.15' ,'192.168.1.4', 'updated-hashcord-website.vercel.app']
+ALLOWED_HOSTS = ['192.168.10.7', '127.0.0.1', 'localhost', '192.168.1.15' ,'192.168.1.4', 'updated-hashcord-website.vercel.app', 'hashcord.co', 'www.hashcord.co']
 
 
 # Application definition
