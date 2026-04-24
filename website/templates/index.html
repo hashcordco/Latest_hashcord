@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero-section vh-100 d-flex align-items-center position-relative overflow-hidden">
+    <div class="grid-overlay"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="container position-relative" style="z-index: 10;">
+        <div class="row align-items-center min-vh-100">
+            
+            <div class="col-lg-6 col-xl-5 py-5">
+                <h1 class="display-1 fw-bold brand-heading mb-5">
+                    HASHCORD: <br>
+                    WE BUILD <br>
+                    <span class="text-gradient" id="typewriter"></span>
+                </h1>
+                
+                <div class="description-container">
+                    <p id="hero-description-text" class="hero-description lh-lg text-white-50">
+                        Hashcord turns complex business challenges into seamless digital experiences. Premier web development, app development, SEO, and digital marketing agency with custom solutions, responsive designs, scalable platforms, cutting-edge code, and data-driven strategies that boost engagement, drive conversions, and expand your global scope.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xl-7 d-none d-lg-block">
+                <div class="visual-container">
+                    <div class="glass-card mouse-parallax tech-card-main floating-card">
+                        <div class="code-header mb-3">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <code class="small text-primary">
+                            <span>class</span> <span class="text-white">Hashcord</span> {<br>
+                            &nbsp;&nbsp;<span>status:</span> <span class="text-success">'innovating'</span>,<br>
+                            &nbsp;&nbsp;<span>vision:</span> <span class="text-success">'unlimited'</span>,<br>
+                            &nbsp;&nbsp;<span>stack:</span> <span class="text-success">['Django', 'html', 'css', 'React']</span><br>
+                            }
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+    </div>
+</section>
+
+{% include 'includes/services.html' %}
+{% include 'includes/portfolio.html' %}
+{% include 'includes/process.html'%}
+{% include 'includes/results.html'%}
+{% include 'includes/contact.html'%}
+{% include 'includes/footer.html'%}
+{% endblock content %}

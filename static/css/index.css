@@ -1,0 +1,661 @@
+/* index.css - Hashcord Agency Edition */
+
+:root {
+    --hash-bg: #05070a;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --primary-blue: #4c51bf;
+    --accent-blue: #7f9cf5;
+}
+
+/* --- BASE STYLES --- */
+body {
+    background-color: var(--hash-bg) !important;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* --- THE GLOW ORBS --- */
+.hero-section, .py-100 {
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 1;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.orb-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, var(--primary-blue), transparent 70%);
+    top: -150px; left: -150px;
+}
+
+.orb-2 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #6b46c1, transparent 70%);
+    bottom: -200px; right: -150px;
+}
+
+/* --- LAYOUT UTILITIES --- */
+.container {
+    position: relative;
+    z-index: 10;
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* --- TYPOGRAPHY --- */
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.brand-heading {
+    letter-spacing: -2px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1rem !important; 
+}
+
+/* --- ENTRANCE ANIMATION STATES --- */
+.hero-description, .mouse-parallax {
+    opacity: 0; 
+    visibility: hidden;
+}
+
+/* --- HERO SPECIFIC - UPDATED SPACING --- */
+.hero-section {
+    min-height: 100vh;
+    padding-top: 140px; 
+    display: flex;
+    align-items: flex-start; 
+}
+
+.badge-animated {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--primary-blue);
+    padding: 8px 16px;
+    border-radius: 100px;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* --- CUSTOM DESCRIPTION STYLES --- */
+.description-container {
+    margin-bottom: 0; 
+    max-width: 540px; 
+    overflow: visible;
+    padding-top: 5px; 
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    max-width: 90%;
+    margin-top: 0; 
+    opacity: 0.85;      
+}
+
+.lh-lg {
+    line-height: 1.8 !important;
+}
+
+/* --- GLASSMORPHISM & PARALLAX --- */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+}
+
+.tech-card-main {
+    width: 100%;
+    max-width: 520px; 
+    padding: 35px;
+    border: 1px solid rgba(76, 81, 191, 0.2);
+    transform-style: preserve-3d;
+}
+
+.visual-container {
+    perspective: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 450px;
+}
+
+.dot { height: 12px; width: 12px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+.red { background: #ff5f56; } 
+.yellow { background: #ffbd2e; } 
+.green { background: #27c93f; box-shadow: 0 0 10px #27c93f; }
+
+/* --- NAVBAR --- */
+.nav-custom {
+    padding: 25px 0;
+    transition: 0.4s;
+}
+
+#nav-logo {
+    width: 110px;
+    height: auto;
+    transition: 0.3s;
+}
+
+.nav-custom.scrolled {
+    padding: 12px 0;
+    background: rgba(5, 7, 10, 0.8) !important;
+    backdrop-filter: blur(20px);
+}
+
+.scrolled #nav-logo {
+    width: 120px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0 15px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes floatingIdle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+.floating-card {
+    animation: floatingIdle 4s ease-in-out infinite;
+}
+
+/* --- SCROLL INDICATOR --- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
+}
+.mouse {
+    width: 25px; height: 40px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    position: relative;
+}
+.wheel {
+    width: 4px; height: 8px;
+    background: var(--primary-blue);
+    position: absolute;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: scroll-anim 2s infinite;
+}
+@keyframes scroll-anim {
+    0% { opacity: 1; top: 8px; }
+    100% { opacity: 0; top: 20px; }
+}
+
+/* --- NAVBAR BUTTON GLOW --- */
+.btn-nav-glow {
+    background: var(--primary-blue);
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 8px;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(76, 81, 191, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.btn-nav-glow:hover {
+    background: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 81, 191, 0.5);
+    color: white !important;
+}
+
+.nav-custom.scrolled .btn-nav-glow {
+    background: var(--primary-blue);
+    color: white !important;
+}
+
+/* --- INTERACTIVE NAV LINKS --- */
+.nav-link-glow {
+    position: relative;
+    transition: all 0.3s ease-in-out !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.nav-link-glow:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(76, 81, 191, 0.8), 
+                 0 0 20px rgba(76, 81, 191, 0.4);
+}
+
+.nav-link-glow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--primary-blue);
+}
+
+.nav-link-glow:hover::after {
+    width: 80%;
+}
+
+/* --- SERVICES SECTION STYLES --- */
+.py-100 {
+    padding: 120px 0;
+}
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.service-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(76, 81, 191, 0.5);
+    background: rgba(76, 81, 191, 0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 
+                inset 0 0 20px rgba(76, 81, 191, 0.1);
+}
+
+.service-accent-line {
+    width: 50px;
+    height: 4px;
+    background: var(--primary-blue);
+    border-radius: 10px;
+    transition: width 0.4s ease, background 0.4s ease;
+}
+
+.service-card:hover .service-accent-line {
+    width: 100px;
+    background: var(--accent-blue);
+    box-shadow: 0 0 15px var(--accent-blue);
+}
+
+.service-card h3.h2 {
+    font-size: 2rem;
+    letter-spacing: -1.5px;
+}
+
+.service-card .lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0;
+}
+
+#services .grid-overlay {
+    opacity: 0.3;
+}
+
+.orb-3 {
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(76, 81, 191, 0.12), transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    filter: blur(150px);
+    z-index: 0;
+}
+
+/* ==========================================================================
+   HASHCORD PORTFOLIO & CAROUSEL SECTION
+   ========================================================================== */
+
+/* FIXED: Centering text, fixing margins, and restoring carousel visibility */
+#portfolio, .portfolio-section {
+    text-align: center !important;
+    padding-top: 40px !important; 
+    margin-top: 0px !important;
+}
+
+/* FIXED: Changed from flex to block so Swiper can calculate width */
+#portfolio .container, .portfolio-section .container {
+    display: block !important;
+    width: 100%;
+}
+
+/* Manually centering the headings inside the block container */
+#portfolio h2, #portfolio p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 800px !important;
+}
+
+/* --- Main Swiper Wrapper --- */
+.portfolio-swiper {
+    padding: 20px 10px 0px 10px !important;
+    overflow: hidden !important; /* Critical for Swiper */
+    display: block !important;
+    position: relative;
+}
+
+/* Ensure all slides in the row stay the same height */
+.swiper-slide {
+    height: auto !important;
+    display: flex !important;
+}
+
+.portfolio-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 100%;
+    min-height: 380px; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #05070a;
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* --- Image Handling (Grayscale to Color) --- */
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1), filter 0.8s ease;
+    filter: grayscale(100%) contrast(1.1) brightness(0.6);
+}
+
+.portfolio-card:hover .project-img {
+    transform: scale(1.05);
+    filter: grayscale(0%) contrast(1) brightness(0.7);
+}
+
+/* --- Overlay & Content --- */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 7, 10, 0.95) 0%, rgba(5, 7, 10, 0.4) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 35px;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+}
+
+.project-content {
+    transform: translateY(15px);
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    width: 100%;
+}
+
+.portfolio-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.portfolio-card:hover .project-content {
+    transform: translateY(0);
+}
+
+.portfolio-card:hover {
+    border-color: rgba(76, 81, 191, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Floating Faded Navigation Buttons --- */
+.portfolio-nav-floating {
+    position: absolute;
+    top: calc(50% - 15px); 
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 64px;
+    height: 64px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02) !important; 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.2) !important; 
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.swiper-prev { left: 10px; } 
+.swiper-next { right: 10px; }
+
+.portfolio-nav-floating:hover {
+    background: rgba(76, 81, 191, 0.8) !important; 
+    border-color: #4c51bf !important;
+    color: #ffffff !important;                      
+    transform: translateY(-50%) scale(1.15);        
+    box-shadow: 0 10px 30px rgba(76, 81, 191, 0.4);
+}
+
+.portfolio-nav-floating:active {
+    transform: translateY(-50%) scale(0.92);        
+    background: #4c51bf !important;
+}
+
+.portfolio-nav-floating i {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+}
+
+.swiper-prev:hover i { transform: translateX(-3px); }
+.swiper-next:hover i { transform: translateX(3px); }
+
+/* --- Swiper Pagination (Mobile Only) --- */
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #4c51bf !important;
+    width: 28px !important;
+    border-radius: 5px !important;
+    transition: width 0.3s ease;
+}
+
+/* --- WORKFLOW / PROCESS SECTION --- */
+#process {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important; 
+}
+
+.process-card {
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.4s ease;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 20px;
+    opacity: 0.4;
+    font-family: 'Inter', sans-serif;
+}
+
+.process-card:hover {
+    border-color: var(--primary-blue);
+    background: rgba(76, 81, 191, 0.05);
+    transform: translateY(-5px);
+}
+
+.process-card:hover .step-number {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(76, 81, 191, 0.4);
+}
+
+/* --- RESULTS / METRICS SECTION --- */
+#results {
+    z-index: 30;
+    position: relative;
+    transform: translateY(-120px); 
+    margin-bottom: -120px; 
+}
+
+.results-container {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(5, 7, 10, 0.95) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 24px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden; 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.metric-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #4c51bf; 
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.metric-line {
+    width: 20px;
+    height: 2px;
+    background: #4c51bf;
+    margin-top: 12px;
+    border-radius: 10px;
+    opacity: 0.6;
+}
+
+/* --- CONTACT FORM STYLES --- */
+.hash-input {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    padding: 15px 20px !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* --- LEGAL & UTILITY PAGES --- */
+.legal-hero {
+    padding-top: 160px; 
+    padding-bottom: 100px;
+    min-height: 100vh;
+}
+
+.glass-card-legal {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+    .brand-heading { font-size: 2.2rem !important; }
+    .hero-section { padding-top: 100px !important; text-align: center !important; }
+    .visual-container { display: none; }
+    .portfolio-card { min-height: 300px !important; }
+    .portfolio-nav-floating { display: none !important; }
+}
+
+/* index.css - Mobile Navigation Fix */
+
+@media (max-width: 991.98px) {
+    /* 1. Make the dropdown background solid black */
+    .navbar-collapse {
+        background-color: #05070a !important; /* Matches your hash-bg */
+        border-radius: 12px;
+        margin-top: 15px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        /* 2. Ensure it sits on top of everything */
+        position: relative;
+        z-index: 9999;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 3. Improve spacing for nav items so they don't look cramped */
+    .nav-link {
+        margin: 10px 0 !important;
+        display: block;
+        text-align: center;
+    }
+
+    /* 4. Center the 'Get in Touch' button in mobile view */
+    .btn-nav-glow {
+        display: block;
+        width: fit-content;
+        margin: 10px auto !important;
+    }
+    
+    /* 5. Fix overlapping header text in hero */
+    .hero-section {
+        padding-top: 120px !important; /* Pushes content down so logo/burger don't hit it */
+    }
+    
+    .brand-heading {
+        font-size: 2.2rem !important; /* Slightly smaller for mobile screens */
+        z-index: 1;
+    }
+}

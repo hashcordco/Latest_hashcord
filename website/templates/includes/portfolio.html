@@ -1,0 +1,123 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section id="portfolio" class="py-100 position-relative overflow-hidden">
+    <div class="portfolio-header-wrap mb-5">
+        <div class="container">
+            <div class="header-content" data-aos="fade-up">
+                <h2 class="display-4 fw-bold text-white mb-2">PROVEN <span class="text-gradient">IMPACT</span></h2>
+                <p class="text-white-50 max-w-600 mb-0">
+                    A curated gallery of digital excellence. From complex system architectures to seamless 
+                    user experiences, explore how we help brands scale through technical precision and creative strategy.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-carousel-wrap">
+        <div class="container">
+            <div class="swiper portfolio-swiper position-relative" data-aos="fade-up" data-aos-delay="200">
+                
+                <div class="swiper-prev portfolio-nav-floating">
+                    <i class="bi bi-chevron-left"></i>
+                </div>
+                <div class="swiper-next portfolio-nav-floating">
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="portfolio-card glass-card">
+                            <img src="{% static 'img/RoomEra.png' %}" alt="RoomEra Admin" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-content">
+                                    <h3 class="h3 fw-bold text-white mb-1">RoomEra</h3>
+                                    <span class="text-gradient small fw-bold text-uppercase tracking-wider">Hostel Management & Marketplace</span>
+                                    <div class="mt-3">
+                                        <span class="badge rounded-pill bg-dark border border-secondary p-2 px-3">React Native</span>
+                                        <span class="badge rounded-pill bg-dark border border-secondary p-2 px-3">Firebase</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="portfolio-card glass-card">
+                            <img src="{% static 'img/neuroshield.png' %}" alt="NeuroShield Dashboard" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-content">
+                                    <h3 class="h3 fw-bold text-white mb-1">NeuroShield SOC</h3>
+                                    <span class="text-gradient small fw-bold text-uppercase tracking-wider">Cybersecurity Telemetry</span>
+                                    <div class="mt-3">
+                                        <span class="badge rounded-pill bg-dark border border-secondary p-2 px-3">Vanilla JS</span>
+                                        <span class="badge rounded-pill bg-dark border border-secondary p-2 px-3">Chart.js</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="portfolio-card glass-card">
+                            <img src="{% static 'img/ResQlink.png' %}" alt="ResQLink App" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-content">
+                                    <h3 class="h3 fw-bold text-white mb-1">ResQLink</h3>
+                                    <span class="text-gradient small fw-bold text-uppercase tracking-wider">Disaster Relief AI</span>
+                                    <div class="mt-3">
+                                        <span class="badge rounded-pill bg-dark border border-secondary p-2 px-3">Gemini 1.5 Flash</span>
+                                        <span class="badge rounded-pill bg-dark border border-secondary p-2 px-3">Google Maps API</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="portfolio-card glass-card">
+                            <img src="{% static 'img/HealthNest.png' %}" alt="HealthNest" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-content">
+                                    <h3 class="h3 fw-bold text-white mb-1">HealthNest</h3>
+                                    <span class="text-gradient small fw-bold text-uppercase tracking-wider">B2G HealthTech Ecosystem</span>
+                                    <div class="mt-3">
+                                        <span class="badge rounded-pill bg-dark border border-secondary p-2 px-3">Expo</span>
+                                        <span class="badge rounded-pill bg-dark border border-secondary p-2 px-3">Cloud Firestore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination mt-5"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.portfolio-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            speed: 800,
+            navigation: {
+                nextEl: '.swiper-next',
+                prevEl: '.swiper-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1200: { slidesPerView: 2.5, spaceBetween: 40 }
+            }
+        });
+    });
+</script>

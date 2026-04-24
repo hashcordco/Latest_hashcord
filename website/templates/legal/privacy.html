@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="legal-page-container bg-dark-grid">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="glass-card-legal p-4 p-md-5" data-aos="fade-up">
+                    <h1 class="display-5 fw-bold text-gradient mb-2">PRIVACY POLICY</h1>
+                    <p class="text-primary-glow small mb-5 tracking-widest">LAST UPDATED: MARCH 2026</p>
+                    
+                    <p class="legal-text-consistency mb-5">
+                        At Hashcord, your privacy is our top priority. We're a team of passionate developers and marketers dedicated to building amazing digital experiences, and we handle your information with the same care we'd give our own projects. This policy explains how we collect, use, protect, and respect your data—transparently and securely. If you have questions, just reach out through the contact us form.
+                    </p>
+                    
+                    <div class="legal-content legal-text-consistency">
+                        <div class="mb-5">
+                            <h3 class="text-white h5 mb-3 tracking-wider text-uppercase">1. Information Collection</h3>
+                            <p>Hashcord collects "Personally Identifiable Information" (PII) only when voluntarily submitted by you through our contact forms, project discovery sessions, or consultation requests. This data typically includes your full name, professional email address, telephone number, and company information required to facilitate business communications and project scoping. Additionally, we collect "Technical Data" such as IP addresses, browser types, and operating system details to ensure our custom web solutions are optimized for your specific environment. We also process "Project Data"—including business objectives and technical requirements—to provide accurate project estimates and execution. Submission of this data is strictly voluntary; however, withholding certain information may limit our ability to provide specific services or accurate quotes.</p>
+                        </div>
+
+                        <div class="mb-5">
+                            <h3 class="text-white h5 mb-3 tracking-wider text-uppercase">2. Analytics Tracking</h3>
+                            <p>To maintain our high standards of performance and user experience, Hashcord utilizes third-party analytics tools, primarily Google Analytics, to monitor aggregate user behavior and site traffic patterns. This data is processed in an anonymized format and is used solely to improve site navigation, load speeds, and content relevance; it is never used to identify individual visitors. We employ "Cookies"—small text files stored on your device—to enhance site functionality, such as remembering form entries during a session. You may manage your cookie preferences through your browser settings or by utilizing the Google Analytics Opt-out Browser Add-on. By continuing to use our site, you consent to the processing of data by Google in the manner and for the purposes set out in this section.</p>
+                        </div>
+
+                        <div class="mb-5">
+                            <h3 class="text-white h5 mb-3 tracking-wider text-uppercase">3. Data Security</h3>
+                            <p>Hashcord employs industry-standard technical and organizational measures to protect your information from unauthorized access, loss, or disclosure. All data in transit is secured using SSL/TLS encryption, and we prioritize development frameworks that include built-in protections against common web vulnerabilities like SQL injection and cross-site scripting. Our digital infrastructure is hosted on enterprise-grade cloud providers (such as AWS), leveraging their physical and network security, including managed firewalls and restricted access protocols.
+
+                            We maintain a strict "Zero-Sale" policy: your personal information is never sold, traded, or rented to third parties. Data access is limited to essential personnel and "Trusted Sub-processors" (such as cloud hosting or secure payment providers) who are contractually bound to maintain your privacy. In alignment with global privacy standards, users may request to access, update, or delete their personal data at any time. While no system is 100% secure, in the event of a verified data breach, Hashcord will notify affected users and relevant authorities within the timelines mandated by applicable law.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-top border-secondary" style="border-opacity: 0.1;">
+                        <a href="{% url 'home' %}" class="nav-link-glow text-decoration-none small tracking-widest">
+                            ← BACK TO HOME
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

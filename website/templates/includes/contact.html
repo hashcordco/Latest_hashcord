@@ -1,0 +1,47 @@
+{% load static %}
+<section id="contact" class="py-100 position-relative">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="glass-card p-5">
+                    <div class="text-center mb-5">
+                        <h2 class="display-4 fw-bold text-white">READY TO <span class="text-gradient">ENGINEER?</span></h2>
+                        <p class="text-white-50">Drop your details below and we'll reach out within 24 hours.</p>
+                    </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert glass-card text-primary-glow border-primary-glow mb-4 p-3 text-center" style="background: rgba(76, 81, 191, 0.1);">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="POST" action="{% url 'contact_view' %}" class="contact-form">
+                        {% csrf_token %}
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="metric-label">Full Name</label>
+                                <input type="text" name="name" class="form-control hash-input" placeholder="e.g. Mark Johnson" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="metric-label">Email Address</label>
+                                <input type="email" name="email" class="form-control hash-input" placeholder="e.g. mark@gmail.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="metric-label">Subject</label>
+                                <input type="text" name="subject" class="form-control hash-input" placeholder="Project Inquiry" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="metric-label">Message</label>
+                                <textarea name="message" class="form-control hash-input" rows="5" placeholder="Tell us about your project goals..." required></textarea>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn-nav-glow w-100 py-3">SEND MESSAGE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
