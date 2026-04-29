@@ -624,38 +624,54 @@ body {
 @media (max-width: 991.98px) {
     /* 1. Make the dropdown background solid black */
     .navbar-collapse {
-        background-color: #05070a !important; /* Matches your hash-bg */
+        background-color: #05070a !important; 
         border-radius: 12px;
         margin-top: 15px;
         padding: 20px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        /* 2. Ensure it sits on top of everything */
         position: relative;
         z-index: 9999;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    /* 3. Improve spacing for nav items so they don't look cramped */
+    /* 2. Improve spacing for nav items so they don't look cramped */
     .nav-link {
         margin: 10px 0 !important;
         display: block;
         text-align: center;
     }
 
-    /* 4. Center the 'Get in Touch' button in mobile view */
+    /* 3. Center the 'Get in Touch' button in mobile view */
     .btn-nav-glow {
         display: block;
         width: fit-content;
         margin: 10px auto !important;
     }
     
-    /* 5. Fix overlapping header text in hero */
+    /* 4. Fix overlapping header text in hero */
     .hero-section {
-        padding-top: 120px !important; /* Pushes content down so logo/burger don't hit it */
+        padding-top: 120px !important; 
     }
     
     .brand-heading {
-        font-size: 2.2rem !important; /* Slightly smaller for mobile screens */
+        font-size: 2.2rem !important; 
         z-index: 1;
     }
+
+    /* 5. Center the Hero Description Block on Mobile */
+    .description-container {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0 15px;
+    }
+
+
 }
